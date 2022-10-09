@@ -1,6 +1,6 @@
 {
   "name": "kunie-portfolio-site",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "homepage": "https://portfolio.kunie.dev/",
   "scripts": {
@@ -14,14 +14,16 @@
     "lint": "npm run lint:js && npm run lint:style && npm run lint:prettier",
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix && npm run lint:style -- --fix",
     "prepare": "husky install",
-    "release-minor-alpha": "release-it preminor --preRelease=alpha --npm.tag=alpha --github.preRelease",
-    "release-minor-beta": "release-it preminor --preRelease=beta --npm.tag=beta --github.preRelease",
-    "release-minor-rc": "release-it preminor --preRelease=rc --npm.tag=rc --github.preRelease",
-    "release-minor": "release-it minor --git.tagMatch='[0-9]*\\\\.[0-9]*\\\\.[0-9]*' --ci",
-    "release-major-alpha": "release-it premajor --preRelease=alpha --npm.tag=alpha --github.preRelease",
-    "release-major-beta": "release-it premajor --preRelease=beta --npm.tag=beta --github.preRelease",
-    "release-major-rc": "release-it premajor --preRelease=rc --npm.tag=rc --github.preRelease",
-    "release-major": "release-it major --git.tagMatch='[0-9]*\\\\.[0-9]*\\\\.[0-9]*' --ci"
+    "release-alpha": "release-it --preRelease=alpha --ci",
+    "release-beta": "release-it --preRelease=beta --ci",
+    "release-rc": "release-it --preRelease=rc --ci",
+    "release": "release-it --git.tagMatch='v[0-9]*\\\\.[0-9]*\\\\.[0-9]*-*' --ci",
+    "release-minor-alpha": "release-it preminor --preRelease=alpha --ci",
+    "release-minor-beta": "release-it preminor --preRelease=beta --ci",
+    "release-minor-rc": "release-it preminor --preRelease=rc --ci",
+    "release-major-alpha": "release-it premajor --preRelease=alpha --ci",
+    "release-major-beta": "release-it premajor --preRelease=beta --ci",
+    "release-major-rc": "release-it premajor --preRelease=rc --ci"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --cache",
@@ -46,6 +48,7 @@
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "@nuxtjs/stylelint-module": "^4.1.0",
+    "auto-changelog": "^2.4.0",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-nuxt": "^4.0.0",
