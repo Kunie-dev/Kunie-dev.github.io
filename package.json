@@ -2,6 +2,7 @@
   "name": "kunie-portfolio-site",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://portfolio.kunie.dev/",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
