@@ -1,11 +1,71 @@
 <template>
-  <div>Nuxt App</div>
+  <main>
+    <section
+      class="home-banner"
+      :style="{ backgroundImage: `url(${homeBannerImgSrc})` }"
+    >
+      <b-container class="home">
+        <b-row align-content="center" class="full-screen">
+          <b-col lg="9">
+            <div class="ht-box">
+              <div class="ht-text">
+                <h1>Kunie</h1>
+                <Typed class="typed" :strings="['FE Developer', 'BE Developer', 'DevOps']" />
+              </div>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
+    </section>
+  </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import Typed from '~/components/Typed.vue'
 
 export default Vue.extend({
   name: 'IndexPage',
+  components: {
+    Typed,
+  },
+  computed: {
+    homeBannerImgSrc() {
+      return `${process.env.cdn}/images/inner_room_00.jpg`
+    },
+  },
 })
 </script>
+
+<style scoped lang="scss">
+.home-banner {
+  height: 100vh;
+  background-position: 80% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  > :before {
+    content: "";
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 70px;
+  }
+
+  .typed {
+    font-weight: 500;
+    font-size: 25px;
+  }
+}
+
+.full-screen {
+  min-height: 100vh;
+}
+</style>
