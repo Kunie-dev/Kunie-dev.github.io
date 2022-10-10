@@ -1,6 +1,6 @@
 {
   "name": "kunie-portfolio-site",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "private": true,
   "homepage": "https://portfolio.kunie.dev/",
   "scripts": {
