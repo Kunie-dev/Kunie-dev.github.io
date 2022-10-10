@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'kunie-portfolio-site',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ko',
     },
     meta: [
       { charset: 'utf-8' },
