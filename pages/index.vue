@@ -1,6 +1,7 @@
 <template>
   <main>
     <section
+      id="home"
       class="home-banner"
       :style="{ backgroundImage: `url(${homeBannerImgSrc})` }"
     >
