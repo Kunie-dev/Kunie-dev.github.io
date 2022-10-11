@@ -10,7 +10,8 @@
           <b-col lg="9">
             <div class="ht-box">
               <div class="ht-text">
-                <h1>Kunie</h1>
+                <p>Hello, my name is</p>
+                <h1>남재근</h1>
                 <Typed class="typed" :strings="['FE Developer', 'BE Developer', 'DevOps']" />
               </div>
             </div>
@@ -65,15 +66,23 @@ export default Vue.extend({
     margin-top: 50px;
     padding-left: 35px;
     border-left: 5px solid #ffffff;
-  }
-  h1 {
-    font-weight: 600;
-    font-size: 70px;
-  }
 
-  .typed {
-    font-weight: 500;
-    font-size: 25px;
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 70px;
+    }
+
+    .typed {
+      font-weight: 500;
+      font-size: 25px;
+    }
   }
 }
 
