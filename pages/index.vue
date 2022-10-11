@@ -61,6 +61,11 @@ export default Vue.extend({
     right: 0;
   }
 
+  .ht-box {
+    margin-top: 50px;
+    padding-left: 35px;
+    border-left: 5px solid #ffffff;
+  }
   h1 {
     font-weight: 600;
     font-size: 70px;
