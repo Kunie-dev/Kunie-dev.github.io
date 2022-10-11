@@ -91,5 +91,9 @@ export default Vue.extend({
 
 .section {
   height: 500px;
+  padding: 100px 0;
+}
+.section:nth-child(2n + 1) {
+  background-color: #f5f8fd;
 }
 </style>
