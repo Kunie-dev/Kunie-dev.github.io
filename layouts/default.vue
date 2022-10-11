@@ -18,9 +18,6 @@
           <div class="footer-about text-center">
             <div class="footer-logo">Kunie</div>
             <b-nav class="justify-content-center">
-              <b-nav-item href="https://kunie.dev" target="_blank">
-                <b-icon icon="house-door-fill" variant="secondary" />
-              </b-nav-item>
               <b-nav-item href="https://blog.kunie.dev" target="_blank">
                 <b-icon icon="files" variant="secondary" />
               </b-nav-item>
