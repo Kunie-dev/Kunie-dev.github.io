@@ -19,7 +19,6 @@
         </b-row>
       </b-container>
     </section>
-    <section id="home" class="section"></section>
     <section id="about" class="section"></section>
     <section id="skills" class="section"></section>
     <section id="portfolio" class="section"></section>
