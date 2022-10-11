@@ -18,6 +18,12 @@
         </b-row>
       </b-container>
     </section>
+    <section id="home" class="section"></section>
+    <section id="about" class="section"></section>
+    <section id="skills" class="section"></section>
+    <section id="portfolio" class="section"></section>
+    <section id="blog" class="section"></section>
+    <section id="contact" class="section"></section>
   </main>
 </template>
 
@@ -68,5 +74,9 @@ export default Vue.extend({
 
 .full-screen {
   min-height: 100vh;
+}
+
+.section {
+  height: 500px;
 }
 </style>

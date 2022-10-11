@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar tag="header" fixed="top">
+    <b-navbar tag="header" fixed="top" v-b-scrollspy>
       <b-navbar-brand href="#">Kunie</b-navbar-brand>
       <b-navbar-nav class="ml-auto">
         <b-nav-item href="#home">Home</b-nav-item>
