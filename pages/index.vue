@@ -20,6 +20,7 @@
       </b-container>
     </section>
     <section id="about" class="section"></section>
+    <section id="resume" class="section"></section>
     <section id="skills" class="section"></section>
     <section id="portfolio" class="section"></section>
     <section id="blog" class="section"></section>

@@ -1,14 +1,29 @@
 <template>
   <div>
-    <b-navbar tag="header" fixed="top" v-b-scrollspy>
+    <b-navbar tag="header" class="header" fixed="top" v-b-scrollspy>
       <b-navbar-brand href="#">KUNIE</b-navbar-brand>
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#home">Home</b-nav-item>
-        <b-nav-item href="#about">About</b-nav-item>
-        <b-nav-item href="#skills">Skills</b-nav-item>
-        <b-nav-item href="#portfolio">Portfolio</b-nav-item>
-        <b-nav-item href="#blog">Blog</b-nav-item>
-        <b-nav-item href="#contact">Contact</b-nav-item>
+      <b-navbar-nav class="ml-auto gnb">
+        <b-nav-item href="#home"
+          ><b-icon icon="house-door-fill" /><span>Home</span></b-nav-item
+        >
+        <b-nav-item href="#about"
+          ><b-icon icon="person-lines-fill" /><span>About</span></b-nav-item
+        >
+        <b-nav-item href="#skills"
+          ><b-icon icon="calendar-range" /><span>Resume</span></b-nav-item
+        >
+        <b-nav-item href="#skills"
+          ><b-icon icon="tools" /><span>Skills</span></b-nav-item
+        >
+        <b-nav-item href="#portfolio"
+          ><b-icon icon="columns-gap" /><span>Portfolio</span></b-nav-item
+        >
+        <b-nav-item href="#blog"
+          ><b-icon icon="files" /><span>Blog</span></b-nav-item
+        >
+        <b-nav-item href="#contact"
+          ><b-icon icon="envelope" /><span>Contact</span></b-nav-item
+        >
       </b-navbar-nav>
     </b-navbar>
     <Nuxt />
@@ -24,7 +39,10 @@
               <b-nav-item href="https://github.com/Kunie-dev" target="_blank">
                 <b-icon icon="github" variant="secondary" />
               </b-nav-item>
-              <b-nav-item href="https://www.linkedin.com/in/kunie/" target="_blank">
+              <b-nav-item
+                href="https://www.linkedin.com/in/kunie/"
+                target="_blank"
+              >
                 <b-icon icon="linkedin" variant="secondary" />
               </b-nav-item>
             </b-nav>
@@ -41,6 +59,15 @@
 </template>
 
 <style scoped lang="scss">
+.header {
+  .gnb {
+    .nav-item {
+      span {
+        font-size: 0;
+      }
+    }
+  }
+}
 .footer {
   background: #0c0c17;
 
