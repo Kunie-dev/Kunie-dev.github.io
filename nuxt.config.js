@@ -39,9 +39,22 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/i18n',
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
   ],
+  i18n: {
+    /* module options */
+    locales: ['ko', 'en'],
+    defaultLocale: 'ko',
+    vueI18n: {
+      fallbackLocale: 'ko',
+      messages: {
+        ko: {},
+        en: {},
+      },
+    },
+  },
   bootstrapVue: {
     bootstrapCSS: false,
     bootstrapVueCSS: false,
