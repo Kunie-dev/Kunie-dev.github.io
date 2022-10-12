@@ -10,10 +10,10 @@
           ><b-icon icon="person-lines-fill" /><span>About</span></b-nav-item
         >
         <b-nav-item href="#skills"
-          ><b-icon icon="calendar-range" /><span>Resume</span></b-nav-item
+        ><b-icon icon="tools" /><span>Skills</span></b-nav-item
         >
-        <b-nav-item href="#skills"
-          ><b-icon icon="tools" /><span>Skills</span></b-nav-item
+        <b-nav-item href="#resume"
+          ><b-icon icon="calendar-range" /><span>Resume</span></b-nav-item
         >
         <b-nav-item href="#portfolio"
           ><b-icon icon="columns-gap" /><span>Portfolio</span></b-nav-item
