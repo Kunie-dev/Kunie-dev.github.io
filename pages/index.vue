@@ -92,7 +92,7 @@
     </section>
     <section id="skills" class="section"></section>
     <section id="resume" class="section"></section>
-    <section id="blog" class="section"></section>
+    <section id="articles" class="section"></section>
     <section id="contact" class="section"></section>
   </main>
 </template>

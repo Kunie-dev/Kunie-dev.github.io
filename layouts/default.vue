@@ -15,8 +15,8 @@
         <b-nav-item href="#resume"
         ><b-icon icon="calendar-range" /><span>Resume</span></b-nav-item
         >
-        <b-nav-item href="#blog"
-        ><b-icon icon="files" /><span>Blog</span></b-nav-item
+        <b-nav-item href="#articles"
+        ><b-icon icon="files" /><span>Articles</span></b-nav-item
         >
         <b-nav-item href="#contact"
         ><b-icon icon="envelope" /><span>Contact</span></b-nav-item
