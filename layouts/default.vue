@@ -4,25 +4,30 @@
       <b-navbar-brand href="#">KUNIE</b-navbar-brand>
       <b-navbar-nav class="gnb">
         <b-nav-item href="#home"
-        ><b-icon icon="house-door-fill" /><span>Home</span></b-nav-item
+        ><b-icon icon="house" /><span>Home</span></b-nav-item
         >
         <b-nav-item href="#about"
         ><b-icon icon="person-lines-fill" /><span>About</span></b-nav-item
         >
         <b-nav-item href="#skills"
-        ><b-icon icon="tools" /><span>Skills</span></b-nav-item
+        ><b-icon icon="list-check" /><span>Skills</span></b-nav-item
         >
         <b-nav-item href="#resume"
-        ><b-icon icon="calendar-range" /><span>Resume</span></b-nav-item
+        ><b-icon icon="file-earmark" /><span>Resume</span></b-nav-item
         >
         <b-nav-item href="#articles"
-        ><b-icon icon="files" /><span>Articles</span></b-nav-item
+        ><b-icon icon="newspaper" /><span>Articles</span></b-nav-item
         >
         <b-nav-item href="#contact"
         ><b-icon icon="envelope" /><span>Contact</span></b-nav-item
         >
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto gnb">
+        <b-nav-item
+          href="https://blog.kunie.dev"
+          target="_blank"
+          ><b-icon icon="layout-text-sidebar-reverse" /><span>Blog</span></b-nav-item
+        >
         <b-nav-item
           href="https://github.com/Kunie-dev/Kunie-dev.github.io"
           target="_blank"
@@ -38,7 +43,7 @@
             <div class="footer-logo">Kunie</div>
             <b-nav class="justify-content-center">
               <b-nav-item href="https://blog.kunie.dev" target="_blank">
-                <b-icon icon="files" variant="secondary" />
+                <b-icon icon="layout-text-sidebar-reverse" variant="secondary" />
               </b-nav-item>
               <b-nav-item href="https://github.com/Kunie-dev" target="_blank">
                 <b-icon icon="github" variant="secondary" />
