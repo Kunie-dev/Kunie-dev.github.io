@@ -66,5 +66,6 @@ export default {
 
   env: {
     cdn: 'https://cdn.kunie.dev',
+    googleApiKey: 'AIzaSyBDFvQNfozSWcRjn-FhL0WVxzHEJE0mRY8',
   },
 }
