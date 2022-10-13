@@ -92,7 +92,27 @@
     </section>
     <section id="skills" class="section"></section>
     <section id="resume" class="section"></section>
-    <section id="articles" class="section"></section>
+    <section id="articles" class="section">
+      <b-container>
+        <div class="section-title">
+          <h2>Articles</h2>
+        </div>
+        <b-card-group columns>
+          <b-card
+            v-for="post in posts"
+            :key="`post-${post.id}`"
+            :title="post.title"
+            sub-title="Kunie.dev Blog"
+          >
+            <b-card-text>
+              {{ post.content.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 100) }}
+            </b-card-text>
+
+            <b-link :href="post.url" target="_blank" class="card-link">Read more...</b-link>
+          </b-card>
+        </b-card-group>
+      </b-container>
+    </section>
     <section id="contact" class="section"></section>
   </main>
 </template>
@@ -102,10 +122,55 @@ import Vue from 'vue'
 import dayjs from 'dayjs'
 import Typed from '~/components/Typed.vue'
 
+interface Post {
+  kind: string;
+  id: string;
+  blog: {
+    id: string;
+  };
+  published: string;
+  updated: string;
+  url: string;
+  selfLink: string;
+  title: string;
+  content: string; // html string
+  author: {
+    id: string;
+    displayName: string;
+    url: string;
+    img: {
+      url: string;
+    };
+  };
+  replies: {
+    totalItems: string,
+    selfLink: string
+  };
+  labels: string[],
+  etag: string;
+}
+interface PostsResponse {
+  kind: string;
+  etag: string;
+  items: Post[];
+}
+
 export default Vue.extend({
   name: 'IndexPage',
   components: {
     Typed,
+  },
+  async mounted() {
+    const { data: { items } } = await this.$axios.get<PostsResponse>(
+      `${process.env.bloggerApiPostsBaseUrl}?key=${process.env.googleApiKey}`
+    )
+
+    this.posts = items.slice(0,6);
+  },
+  data() {
+    return {
+      posts: [] as Post[],
+    }
   },
   computed: {
     homeBannerImgSrc() {
