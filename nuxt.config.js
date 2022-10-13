@@ -39,6 +39,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
     '@nuxtjs/i18n',
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
@@ -67,5 +68,6 @@ export default {
   env: {
     cdn: 'https://cdn.kunie.dev',
     googleApiKey: 'AIzaSyBDFvQNfozSWcRjn-FhL0WVxzHEJE0mRY8',
+    bloggerApiPostsBaseUrl: 'https://www.googleapis.com/blogger/v3/blogs/2580876278653058387/posts'
   },
 }
