@@ -29,7 +29,7 @@ export default Vue.extend({
 <style scoped lang="scss">
 section {
   min-height: 500px;
-  padding: 100px 0;
+  padding: 100px 0 130px;
 
   .section-title {
     margin-bottom: 50px;
