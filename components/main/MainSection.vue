@@ -32,7 +32,7 @@ section {
   padding: 100px 0;
 
   .section-title {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 }
 
