@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <b-container>
-      <div v-if="hasHeaderText || hasHeaderDesc" class="section-title">
+      <div v-if="hasHeaderText || hasHeaderDesc" class="section-title text-center">
         <h2 v-if="hasHeaderText"><slot name="header-text" /></h2>
         <p v-if="hasHeaderDesc"><slot name="header-desc"/></p>
       </div>
@@ -33,6 +33,10 @@ section {
 
   .section-title {
     margin-bottom: 50px;
+
+    h2 {
+      text-transform: uppercase;
+    }
   }
 }
 
