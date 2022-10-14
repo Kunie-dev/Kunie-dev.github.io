@@ -92,8 +92,8 @@
     <MainSection id="resume">
       <template #header-text>Resume</template>
     </MainSection>
-    <MainSection id="articles">
-      <template #header-text>Articles</template>
+    <MainSection id="article">
+      <template #header-text>Article</template>
       <b-card-group columns>
         <b-card
           v-for="post in posts"

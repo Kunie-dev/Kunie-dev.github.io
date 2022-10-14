@@ -15,8 +15,8 @@
         <b-nav-item href="#resume"
         ><b-icon icon="file-earmark" /><span>Resume</span></b-nav-item
         >
-        <b-nav-item href="#articles"
-        ><b-icon icon="newspaper" /><span>Articles</span></b-nav-item
+        <b-nav-item href="#article"
+        ><b-icon icon="newspaper" /><span>Article</span></b-nav-item
         >
         <b-nav-item href="#contact"
         ><b-icon icon="envelope" /><span>Contact</span></b-nav-item
