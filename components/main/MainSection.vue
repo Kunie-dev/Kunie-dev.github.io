@@ -30,6 +30,10 @@ export default Vue.extend({
 section {
   min-height: 500px;
   padding: 100px 0;
+
+  .section-title {
+    margin-bottom: 20px;
+  }
 }
 
 section:nth-child(2n + 1) {
