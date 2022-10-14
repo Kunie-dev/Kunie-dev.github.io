@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section
+    <MainSection
       id="home"
       class="home-banner"
       :style="{ backgroundImage: `url(${homeBannerImgSrc})` }"
@@ -21,99 +21,91 @@
           </b-col>
         </b-row>
       </b-container>
-    </section>
-    <section id="about" class="section">
-      <b-container>
-        <div class="section-title">
-          <h2>About</h2>
-          <p>안녕하세요. 풀 스택 개발자 남재근입니다.</p>
-        </div>
-        <b-row>
-          <b-col lg="4">
-            <img :src="require('@/assets/img/profile-img.png')" alt="" />
-          </b-col>
-          <b-col lg="8">
-            <h3 class="text-primary">BE &#43; FE Developer.</h3>
-            <p class="fst-italic"></p>
-            <b-row>
-              <b-col lg="6">
-                <ul>
-                  <li>
-                    <b-icon icon="chevron-right" variant="primary" />
-                    <strong>생일:</strong> <span>1990. 07. 26.</span>
-                  </li>
-                  <li>
-                    <b-icon icon="chevron-right" variant="primary" />
-                    <strong>지역:</strong> <span>대한민국 서울특별시</span>
-                  </li>
-                  <li>
-                    <b-icon icon="chevron-right" variant="primary" />
-                    <strong>이메일:</strong>
-                    <a href="mailto:kunie.dev@gmail.com">kunie.dev@gmail.com</a>
-                  </li>
-                  <li>
-                    <b-icon icon="chevron-right" variant="primary" />
-                    <strong>블로그:</strong>
-                    <a href="https://blog.kunie.dev" target="_blank"
-                      >https://blog.kunie.dev</a
-                    >
-                  </li>
-                </ul>
-              </b-col>
-              <b-col lg="6">
-                <ul>
-                  <li>
-                    <b-icon icon="chevron-right" variant="primary" />
-                    <strong>나이:</strong> <span>{{ age }}</span>
-                  </li>
-                  <li>
-                    <b-icon icon="chevron-right" variant="primary" />
-                    <strong>학력:</strong> <span>대졸</span>
-                  </li>
-                  <li>
-                    <b-icon icon="chevron-right" variant="primary" />
-                    <strong>연락처:</strong>
-                    <a href="tel:+821040795849">+82 10 4079 5849</a>
-                  </li>
-                  <li>
-                    <b-icon icon="chevron-right" variant="primary" />
-                    <strong>Github:</strong>
-                    <a href="https://github.com/Kunie-dev" target="_blank"
-                      >https://github.com/Kunie-dev</a
-                    >
-                  </li>
-                </ul>
-              </b-col>
-            </b-row>
-            <p></p>
-          </b-col>
-        </b-row>
-      </b-container>
-    </section>
-    <section id="skills" class="section"></section>
-    <section id="resume" class="section"></section>
-    <section id="articles" class="section">
-      <b-container>
-        <div class="section-title">
-          <h2>Articles</h2>
-        </div>
-        <b-card-group columns>
-          <b-card
-            v-for="post in posts"
-            :key="`post-${post.id}`"
-            :title="post.title"
-            sub-title="Kunie.dev Blog"
-          >
-            <b-card-text>
-              {{ post.content.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 100) }}
-            </b-card-text>
+    </MainSection>
+    <MainSection id="about">
+      <template #header-text>About</template>
+      <template #header-desc>안녕하세요. 풀 스택 개발자 남재근입니다.</template>
+      <b-row>
+        <b-col lg="4">
+          <img :src="require('@/assets/img/profile-img.png')" alt="" />
+        </b-col>
+        <b-col lg="8">
+          <h3 class="text-primary">BE &#43; FE Developer.</h3>
+          <p class="fst-italic"></p>
+          <b-row>
+            <b-col lg="6">
+              <ul>
+                <li>
+                  <b-icon icon="chevron-right" variant="primary" />
+                  <strong>생일:</strong> <span>1990. 07. 26.</span>
+                </li>
+                <li>
+                  <b-icon icon="chevron-right" variant="primary" />
+                  <strong>지역:</strong> <span>대한민국 서울특별시</span>
+                </li>
+                <li>
+                  <b-icon icon="chevron-right" variant="primary" />
+                  <strong>이메일:</strong>
+                  <a href="mailto:kunie.dev@gmail.com">kunie.dev@gmail.com</a>
+                </li>
+                <li>
+                  <b-icon icon="chevron-right" variant="primary" />
+                  <strong>블로그:</strong>
+                  <a href="https://blog.kunie.dev" target="_blank"
+                  >https://blog.kunie.dev</a
+                  >
+                </li>
+              </ul>
+            </b-col>
+            <b-col lg="6">
+              <ul>
+                <li>
+                  <b-icon icon="chevron-right" variant="primary" />
+                  <strong>나이:</strong> <span>{{ age }}</span>
+                </li>
+                <li>
+                  <b-icon icon="chevron-right" variant="primary" />
+                  <strong>학력:</strong> <span>대졸</span>
+                </li>
+                <li>
+                  <b-icon icon="chevron-right" variant="primary" />
+                  <strong>연락처:</strong>
+                  <a href="tel:+821040795849">+82 10 4079 5849</a>
+                </li>
+                <li>
+                  <b-icon icon="chevron-right" variant="primary" />
+                  <strong>Github:</strong>
+                  <a href="https://github.com/Kunie-dev" target="_blank"
+                  >https://github.com/Kunie-dev</a
+                  >
+                </li>
+              </ul>
+            </b-col>
+          </b-row>
+          <p></p>
+        </b-col>
+      </b-row>
+    </MainSection>
+    <MainSection id="skills"></MainSection>
+    <MainSection id="resume"></MainSection>
+    <MainSection id="articles">
+      <template #header-text>Articles</template>
+      <b-card-group columns>
+        <b-card
+          v-for="post in posts"
+          :key="`post-${post.id}`"
+          :title="post.title"
+          sub-title="Kunie.dev Blog"
+        >
+          <b-card-text>
+            {{ post.content.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 100) }}
+          </b-card-text>
 
-            <b-link :href="post.url" target="_blank" class="card-link">Read more...</b-link>
-          </b-card>
-        </b-card-group>
-      </b-container>
-    </section>
-    <section id="contact" class="section"></section>
+          <b-link :href="post.url" target="_blank" class="card-link">Read more...</b-link>
+        </b-card>
+      </b-card-group>
+    </MainSection>
+    <MainSection id="contact"></MainSection>
   </main>
 </template>
 
@@ -121,6 +113,7 @@
 import Vue from 'vue'
 import dayjs from 'dayjs'
 import Typed from '~/components/Typed.vue'
+import MainSection from '~/components/main/MainSection.vue'
 
 interface Post {
   kind: string;
@@ -158,6 +151,7 @@ interface PostsResponse {
 export default Vue.extend({
   name: 'IndexPage',
   components: {
+    MainSection,
     Typed,
   },
   async mounted() {
@@ -254,13 +248,5 @@ export default Vue.extend({
       }
     }
   }
-}
-
-.section {
-  min-height: 500px;
-  padding: 100px 0;
-}
-.section:nth-child(2n + 1) {
-  background-color: #f5f8fd;
 }
 </style>
