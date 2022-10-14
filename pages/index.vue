@@ -86,8 +86,12 @@
         </b-col>
       </b-row>
     </MainSection>
-    <MainSection id="skills"></MainSection>
-    <MainSection id="resume"></MainSection>
+    <MainSection id="skills">
+      <template #header-text>Skills</template>
+    </MainSection>
+    <MainSection id="resume">
+      <template #header-text>Resume</template>
+    </MainSection>
     <MainSection id="articles">
       <template #header-text>Articles</template>
       <b-card-group columns>
@@ -105,7 +109,9 @@
         </b-card>
       </b-card-group>
     </MainSection>
-    <MainSection id="contact"></MainSection>
+    <MainSection id="contact">
+      <template #header-text>Contact</template>
+    </MainSection>
   </main>
 </template>
 
