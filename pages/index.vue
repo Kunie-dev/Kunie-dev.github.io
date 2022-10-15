@@ -41,18 +41,13 @@
                 </li>
                 <li>
                   <b-icon icon="chevron-right" variant="primary" />
-                  <strong>지역:</strong> <span>대한민국 서울특별시</span>
-                </li>
-                <li>
-                  <b-icon icon="chevron-right" variant="primary" />
-                  <strong>이메일:</strong>
-                  <a href="mailto:kunie.dev@gmail.com">kunie.dev@gmail.com</a>
+                  <strong>지역:</strong> <span>대한민국 서울특별시 강동구</span>
                 </li>
                 <li>
                   <b-icon icon="chevron-right" variant="primary" />
                   <strong>블로그:</strong>
                   <a href="https://blog.kunie.dev" target="_blank"
-                  >https://blog.kunie.dev</a
+                    >https://blog.kunie.dev</a
                   >
                 </li>
               </ul>
@@ -69,14 +64,9 @@
                 </li>
                 <li>
                   <b-icon icon="chevron-right" variant="primary" />
-                  <strong>연락처:</strong>
-                  <a href="tel:+821040795849">+82 10 4079 5849</a>
-                </li>
-                <li>
-                  <b-icon icon="chevron-right" variant="primary" />
                   <strong>Github:</strong>
                   <a href="https://github.com/Kunie-dev" target="_blank"
-                  >https://github.com/Kunie-dev</a
+                    >https://github.com/Kunie-dev</a
                   >
                 </li>
               </ul>
@@ -102,15 +92,77 @@
           sub-title="Kunie.dev Blog"
         >
           <b-card-text>
-            {{ post.content.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 100) }}
+            {{ post.content.replace(/<\/?[^>]+(>|$)/g, '').substring(0, 100) }}
           </b-card-text>
 
-          <b-link :href="post.url" target="_blank" class="card-link">Read more...</b-link>
+          <b-link :href="post.url" target="_blank" class="card-link"
+            >Read more...</b-link
+          >
         </b-card>
       </b-card-group>
     </MainSection>
     <MainSection id="contact">
       <template #header-text>Contact</template>
+      <b-row>
+        <b-col lg="4">
+          <address class="info">
+            <div class="location d-flex align-items-center">
+              <b-icon
+                icon="geo-alt"
+                class="rounded-circle bg-info p-2 float-left"
+                variant="light"
+                font-scale="3"
+              />
+              <div class="d-flex flex-column ml-3">
+                <span class="h5">지역</span>
+                <span>대한민국 서울특별시 강동구</span>
+              </div>
+            </div>
+            <div class="email d-flex align-items-center">
+              <b-icon
+                icon="envelope"
+                class="rounded-circle bg-info p-2 float-left"
+                variant="light"
+                font-scale="3"
+              />
+              <div class="d-flex flex-column ml-3">
+                <span class="h5">이메일</span>
+                <a href="mailto:kunie.dev@gmail.com">kunie.dev@gmail.com</a>
+              </div>
+            </div>
+            <div class="phone d-flex align-items-center">
+              <b-icon
+                icon="phone"
+                class="rounded-circle bg-info p-2 float-left"
+                variant="light"
+                font-scale="3"
+              />
+              <div class="d-flex flex-column ml-3">
+                <span class="h5">휴대폰</span>
+                <a href="tel:+821040795849">010-4079-5849</a>
+              </div>
+            </div>
+          </address>
+        </b-col>
+        <b-col lg="8">
+          <b-form @submit="onSubmit">
+            <b-form-group :label-sr-only="true">
+              <b-form-input type="email" v-model="from" placeholder="이메일" size="lg" />
+            </b-form-group>
+            <b-form-group :label-sr-only="true">
+              <b-form-input type="text" v-model="title" placeholder="제목" size="lg" />
+            </b-form-group>
+            <b-form-group :label-sr-only="true">
+              <b-form-textarea v-model="content" placeholder="내용" rows="5" size="lg" />
+            </b-form-group>
+            <div class="text-center">
+              <b-button type="submit" squared size="lg" variant="primary"
+                >발송</b-button
+              >
+            </div>
+          </b-form>
+        </b-col>
+      </b-row>
     </MainSection>
   </main>
 </template>
@@ -122,36 +174,36 @@ import Typed from '~/components/Typed.vue'
 import MainSection from '~/components/main/MainSection.vue'
 
 interface Post {
-  kind: string;
-  id: string;
+  kind: string
+  id: string
   blog: {
-    id: string;
-  };
-  published: string;
-  updated: string;
-  url: string;
-  selfLink: string;
-  title: string;
-  content: string; // html string
+    id: string
+  }
+  published: string
+  updated: string
+  url: string
+  selfLink: string
+  title: string
+  content: string // html string
   author: {
-    id: string;
-    displayName: string;
-    url: string;
+    id: string
+    displayName: string
+    url: string
     img: {
-      url: string;
-    };
-  };
+      url: string
+    }
+  }
   replies: {
-    totalItems: string,
+    totalItems: string
     selfLink: string
-  };
-  labels: string[],
-  etag: string;
+  }
+  labels: string[]
+  etag: string
 }
 interface PostsResponse {
-  kind: string;
-  etag: string;
-  items: Post[];
+  kind: string
+  etag: string
+  items: Post[]
 }
 
 export default Vue.extend({
@@ -161,15 +213,20 @@ export default Vue.extend({
     Typed,
   },
   async mounted() {
-    const { data: { items } } = await this.$axios.get<PostsResponse>(
+    const {
+      data: { items },
+    } = await this.$axios.get<PostsResponse>(
       `${process.env.bloggerApiPostsBaseUrl}?key=${process.env.googleApiKey}`
     )
 
-    this.posts = items.slice(0,6);
+    this.posts = items.slice(0, 6)
   },
   data() {
     return {
       posts: [] as Post[],
+      from: "",
+      title: "",
+      content: "",
     }
   },
   computed: {
@@ -178,6 +235,11 @@ export default Vue.extend({
     },
     age() {
       return dayjs().diff(dayjs('19900101', 'YYYYMMDD'), 'years') + 1
+    },
+  },
+  methods: {
+    async onSubmit(event: SubmitEvent) {
+      event.preventDefault()
     },
   },
 })
@@ -252,6 +314,21 @@ export default Vue.extend({
       strong {
         margin-right: 10px;
       }
+    }
+  }
+}
+
+#contact {
+  .location,
+  .email,
+  .phone {
+    font-size: 14px;
+    color: #728394;
+    margin-bottom: 40px;
+
+    .h5 {
+      color: #45505b;
+      font-weight: 600;
     }
   }
 }
