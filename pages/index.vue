@@ -159,7 +159,7 @@
               <b-form-textarea v-model="content" placeholder="내용" rows="5" size="lg" />
             </b-form-group>
             <div class="text-center">
-              <b-button type="submit" squared size="lg" variant="primary"
+              <b-button type="submit" pill size="lg" variant="info"
                 >발송</b-button
               >
             </div>
