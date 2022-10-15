@@ -147,7 +147,10 @@
         <b-col lg="8">
           <b-form @submit="onSubmit">
             <b-form-group :label-sr-only="true">
-              <b-form-input type="email" v-model="from" placeholder="이메일" size="lg" />
+              <b-form-input type="name" v-model="name" placeholder="성함" size="lg" />
+            </b-form-group>
+            <b-form-group :label-sr-only="true">
+              <b-form-input type="email" v-model="email" placeholder="이메일" size="lg" />
             </b-form-group>
             <b-form-group :label-sr-only="true" :state="0 < title.trim().length">
               <b-form-input type="text" v-model="title" placeholder="제목" size="lg" />
@@ -224,7 +227,8 @@ export default Vue.extend({
   data() {
     return {
       posts: [] as Post[],
-      from: "",
+      name: "",
+      email: "",
       title: "",
       content: "",
     }
@@ -243,13 +247,15 @@ export default Vue.extend({
 
       try {
         await this.$axios.post(`${process.env.apiBaseUrl}/contact`, {
-          from: this.from,
+          name: this.name,
+          email: this.email,
           title: this.title,
           content: this.content
         });
 
         alert("발송되었습니다.");
-        this.from = "";
+        this.name = "";
+        this.email = "";
         this.title = "";
         this.content = "";
       } catch (e) {
