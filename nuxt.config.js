@@ -67,6 +67,7 @@ export default {
 
   env: {
     cdn: 'https://cdn.kunie.dev',
+    apiBaseUrl: 'https://api.kunie.dev',
     googleApiKey: 'AIzaSyBDFvQNfozSWcRjn-FhL0WVxzHEJE0mRY8',
     bloggerApiPostsBaseUrl: 'https://www.googleapis.com/blogger/v3/blogs/2580876278653058387/posts'
   },

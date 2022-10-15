@@ -149,7 +149,7 @@
             <b-form-group :label-sr-only="true">
               <b-form-input type="email" v-model="from" placeholder="이메일" size="lg" />
             </b-form-group>
-            <b-form-group :label-sr-only="true">
+            <b-form-group :label-sr-only="true" :state="0 < title.trim().length">
               <b-form-input type="text" v-model="title" placeholder="제목" size="lg" />
             </b-form-group>
             <b-form-group :label-sr-only="true">
@@ -239,7 +239,23 @@ export default Vue.extend({
   },
   methods: {
     async onSubmit(event: SubmitEvent) {
-      event.preventDefault()
+      event.preventDefault();
+
+      try {
+        await this.$axios.post(`${process.env.apiBaseUrl}/contact`, {
+          from: this.from,
+          title: this.title,
+          content: this.content
+        });
+
+        alert("발송되었습니다.");
+        this.from = "";
+        this.title = "";
+        this.content = "";
+      } catch (e) {
+        console.error(e);
+        alert("Error");
+      }
     },
   },
 })
