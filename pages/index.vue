@@ -151,6 +151,7 @@
                 type="text"
                 v-model="name"
                 placeholder="성함"
+                required
                 size="lg"
               />
             </b-form-group>
@@ -159,17 +160,16 @@
                 type="email"
                 v-model="email"
                 placeholder="이메일"
+                required
                 size="lg"
               />
             </b-form-group>
-            <b-form-group
-              :label-sr-only="true"
-              :state="0 < title.trim().length"
-            >
+            <b-form-group :label-sr-only="true">
               <b-form-input
                 type="text"
                 v-model="title"
                 placeholder="제목"
+                required
                 size="lg"
               />
             </b-form-group>
@@ -177,6 +177,7 @@
               <b-form-textarea
                 v-model="content"
                 placeholder="내용"
+                required
                 rows="5"
                 size="lg"
               />
@@ -189,7 +190,7 @@
               class="w-25 m-auto d-block"
               >발송</b-button
             >
-            <b-overlay :show="showContactOverlay" no-wrap rounded> </b-overlay>
+            <b-overlay :show="showContactOverlay" no-wrap rounded />
           </b-form>
         </b-col>
       </b-row>
@@ -273,27 +274,28 @@ export default Vue.extend({
     async onSubmit(event: SubmitEvent) {
       event.preventDefault()
 
-      this.showContactOverlay = true
+      setTimeout(() => {
+        this.showContactOverlay = true
+        try {
+          // await this.$axios.post(`${process.env.apiBaseUrl}/contact`, {
+          //   name: this.name,
+          //   email: this.email,
+          //   title: this.title,
+          //   content: this.content,
+          // })
 
-      try {
-        await this.$axios.post(`${process.env.apiBaseUrl}/contact`, {
-          name: this.name,
-          email: this.email,
-          title: this.title,
-          content: this.content,
-        })
-
-        alert('발송되었습니다.')
-        this.name = ''
-        this.email = ''
-        this.title = ''
-        this.content = ''
-      } catch (e) {
-        console.error(e)
-        alert('Error')
-      } finally {
-        this.showContactOverlay = false
-      }
+          alert('발송되었습니다.')
+          this.name = ''
+          this.email = ''
+          this.title = ''
+          this.content = ''
+        } catch (e) {
+          console.error(e)
+          alert('Error')
+        } finally {
+          this.showContactOverlay = false
+        }
+      }, 1000)
     },
   },
 })
