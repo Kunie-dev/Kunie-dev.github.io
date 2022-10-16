@@ -24,27 +24,32 @@
     </MainSection>
     <MainSection id="about">
       <template #header-text>About</template>
-      <template #header-desc>안녕하세요. 풀 스택 개발자 남재근입니다.</template>
+      <template #header-desc></template>
       <b-row>
         <b-col lg="4">
           <img :src="require('@/assets/img/profile-img.png')" alt="" />
         </b-col>
-        <b-col lg="8">
-          <h3 class="text-primary">BE &#43; FE Developer.</h3>
+        <b-col tag="article" lg="8">
+          <h3>Developer</h3>
           <p class="fst-italic"></p>
           <b-row>
             <b-col lg="6">
               <ul>
                 <li>
-                  <b-icon icon="chevron-right" variant="primary" />
-                  <strong>생일:</strong> <span>1990. 07. 26.</span>
+                  <b-icon icon="chevron-right" />
+                  <strong>생일:</strong> <span>{{ birthday }}</span>
                 </li>
                 <li>
-                  <b-icon icon="chevron-right" variant="primary" />
+                  <b-icon icon="chevron-right" />
                   <strong>지역:</strong> <span>대한민국 서울특별시 강동구</span>
                 </li>
                 <li>
-                  <b-icon icon="chevron-right" variant="primary" />
+                  <b-icon icon="chevron-right" />
+                  <strong>이메일:</strong>
+                  <a href="mailto:kunie.dev@gmail.com">kunie.dev@gmail.com</a>
+                </li>
+                <li>
+                  <b-icon icon="chevron-right" />
                   <strong>블로그:</strong>
                   <a href="https://blog.kunie.dev" target="_blank"
                     >https://blog.kunie.dev</a
@@ -55,15 +60,20 @@
             <b-col lg="6">
               <ul>
                 <li>
-                  <b-icon icon="chevron-right" variant="primary" />
+                  <b-icon icon="chevron-right" />
                   <strong>나이:</strong> <span>{{ age }}</span>
                 </li>
                 <li>
-                  <b-icon icon="chevron-right" variant="primary" />
-                  <strong>학력:</strong> <span>대졸</span>
+                  <b-icon icon="chevron-right" />
+                  <strong>학력:</strong> <span>대졸 - 컴퓨터공학과 (4년)</span>
                 </li>
                 <li>
-                  <b-icon icon="chevron-right" variant="primary" />
+                  <b-icon icon="chevron-right" />
+                  <strong>연락처:</strong>
+                  <a href="tel:+821040795849">010-4079-5849</a>
+                </li>
+                <li>
+                  <b-icon icon="chevron-right" />
                   <strong>Github:</strong>
                   <a href="https://github.com/Kunie-dev" target="_blank"
                     >https://github.com/Kunie-dev</a
@@ -78,6 +88,138 @@
     </MainSection>
     <MainSection id="skills">
       <template #header-text>Skills</template>
+      <b-row tag="article">
+        <b-col sm="12" md lg xl>
+          <h3 class="text-center">Language</h3>
+        </b-col>
+        <b-col>
+          <b-list-group>
+            <b-list-group-item>Java</b-list-group-item>
+            <b-list-group-item>Node.js (JavaScript)</b-list-group-item>
+            <b-list-group-item>TypeScript</b-list-group-item>
+            <b-list-group-item>PHP</b-list-group-item>
+          </b-list-group>
+        </b-col>
+      </b-row>
+      <b-row tag="article">
+        <b-col sm="12" md lg xl>
+          <h3 class="text-center">Back-end</h3>
+        </b-col>
+        <b-col>
+          <b-list-group>
+            <b-list-group-item v-b-toggle.collapse-spring-framework>
+              Spring Framework
+              <b-badge pill class="float-right">3</b-badge>
+              <b-collapse id="collapse-spring-framework" class="mt-2">
+                <b-list-group>
+                  <b-list-group-item>Spring Boot</b-list-group-item>
+                  <b-list-group-item>Spring WebMVC</b-list-group-item>
+                  <b-list-group-item>Spring Data</b-list-group-item>
+                </b-list-group>
+              </b-collapse>
+            </b-list-group-item>
+            <b-list-group-item>MyBatis</b-list-group-item>
+          </b-list-group>
+        </b-col>
+      </b-row>
+      <b-row tag="article">
+        <b-col sm="12" md lg xl>
+          <h3 class="text-center">Front-end</h3>
+        </b-col>
+        <b-col>
+          <b-list-group>
+            <b-list-group-item>HTML / CSS / JavaScript</b-list-group-item>
+            <b-list-group-item>React</b-list-group-item>
+            <b-list-group-item>Vue.js</b-list-group-item>
+          </b-list-group>
+        </b-col>
+      </b-row>
+      <b-row tag="article">
+        <b-col sm="12" md lg xl>
+          <h3 class="text-center">DevOps</h3>
+        </b-col>
+        <b-col>
+          <b-list-group>
+            <b-list-group-item v-b-toggle.collapse-aws>
+              AWS
+              <b-badge pill class="float-right">21</b-badge>
+              <b-collapse id="collapse-aws" class="mt-2">
+                <b-list-group>
+                  <b-list-group-item>VPC</b-list-group-item>
+                  <b-list-group-item>EC2</b-list-group-item>
+                  <b-list-group-item>RDS</b-list-group-item>
+                  <b-list-group-item>ElastiCache</b-list-group-item>
+                  <b-list-group-item>DynamoDB</b-list-group-item>
+                  <b-list-group-item>S3</b-list-group-item>
+                  <b-list-group-item>CloudFront</b-list-group-item>
+                  <b-list-group-item>Route 53</b-list-group-item>
+                  <b-list-group-item>Lambda</b-list-group-item>
+                  <b-list-group-item>EventBridge</b-list-group-item>
+                  <b-list-group-item>Simple Email Service</b-list-group-item>
+                  <b-list-group-item>Simple Notification Service</b-list-group-item>
+                  <b-list-group-item>API Gateway</b-list-group-item>
+                  <b-list-group-item>API AppSync</b-list-group-item>
+                  <b-list-group-item>Certificate Manager</b-list-group-item>
+                  <b-list-group-item>CloudWatch</b-list-group-item>
+                  <b-list-group-item>ElasticBeanstalk</b-list-group-item>
+                  <b-list-group-item>Amplify</b-list-group-item>
+                  <b-list-group-item>IAM</b-list-group-item>
+                  <b-list-group-item>Cognito</b-list-group-item>
+                  <b-list-group-item>WAF</b-list-group-item>
+                  <b-list-group-item>CloudFormation</b-list-group-item>
+                </b-list-group>
+              </b-collapse>
+            </b-list-group-item>
+            <b-list-group-item v-b-toggle.collapse-database>
+              Database
+              <b-badge pill class="float-right">3</b-badge>
+              <b-collapse id="collapse-database" class="mt-2">
+                <b-list-group>
+                  <b-list-group-item>MariaDB (MySQL)</b-list-group-item>
+                  <b-list-group-item>MSSQL</b-list-group-item>
+                  <b-list-group-item>Oracle</b-list-group-item>
+                </b-list-group>
+              </b-collapse>
+            </b-list-group-item>
+            <b-list-group-item>Jenkins</b-list-group-item>
+            <b-list-group-item>Docker</b-list-group-item>
+            <b-list-group-item>Nexus Repository</b-list-group-item>
+          </b-list-group>
+        </b-col>
+      </b-row>
+      <b-row tag="article">
+        <b-col sm="12" md lg xl>
+          <h3 class="text-center">Tools</h3>
+        </b-col>
+        <b-col>
+          <b-list-group>
+            <b-list-group-item v-b-toggle.collapse-jetbrains>
+              JetBrains
+              <b-badge pill class="float-right">3</b-badge>
+              <b-collapse id="collapse-jetbrains" class="mt-2">
+                <b-list-group>
+                  <b-list-group-item>IntelliJ IDEA</b-list-group-item>
+                  <b-list-group-item>WebStorm</b-list-group-item>
+                  <b-list-group-item>DataGrip</b-list-group-item>
+                </b-list-group>
+              </b-collapse>
+            </b-list-group-item>
+            <b-list-group-item v-b-toggle.collapse-git>
+              Git
+              <b-badge pill class="float-right">3</b-badge>
+              <b-collapse id="collapse-git" class="mt-2">
+                <b-list-group>
+                  <b-list-group-item>GitHub</b-list-group-item>
+                  <b-list-group-item>GitLab</b-list-group-item>
+                  <b-list-group-item>Bitbucket</b-list-group-item>
+                </b-list-group>
+              </b-collapse>
+            </b-list-group-item>
+            <b-list-group-item>Slack</b-list-group-item>
+            <b-list-group-item>Jira</b-list-group-item>
+          </b-list-group>
+        </b-col>
+      </b-row>
     </MainSection>
     <MainSection id="resume">
       <template #header-text>Resume</template>
@@ -203,39 +345,10 @@ import Vue from 'vue'
 import dayjs from 'dayjs'
 import Typed from '~/components/Typed.vue'
 import MainSection from '~/components/main/MainSection.vue'
+import {Post, PostsResponse} from "~/types/Blogger";
 
-interface Post {
-  kind: string
-  id: string
-  blog: {
-    id: string
-  }
-  published: string
-  updated: string
-  url: string
-  selfLink: string
-  title: string
-  content: string // html string
-  author: {
-    id: string
-    displayName: string
-    url: string
-    img: {
-      url: string
-    }
-  }
-  replies: {
-    totalItems: string
-    selfLink: string
-  }
-  labels: string[]
-  etag: string
-}
-interface PostsResponse {
-  kind: string
-  etag: string
-  items: Post[]
-}
+const myBirthday = dayjs('19900726', 'YYYYMMDD');
+const myBirthdayFirstDate = dayjs('19900101', 'YYYYMMDD');
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -266,8 +379,11 @@ export default Vue.extend({
     homeBannerImgSrc() {
       return `${process.env.cdn}/images/inner_room_00.jpg`
     },
+    birthday() {
+      return myBirthday.format("YYYY. MM. DD.")
+    },
     age() {
-      return dayjs().diff(dayjs('19900101', 'YYYYMMDD'), 'years') + 1
+      return dayjs().diff(myBirthdayFirstDate, 'years') + 1
     },
   },
   methods: {
@@ -374,6 +490,10 @@ export default Vue.extend({
   }
 }
 
+#skills article {
+  margin: 30px 0;
+}
+
 #contact {
   .location,
   .email,
@@ -383,7 +503,6 @@ export default Vue.extend({
     margin-bottom: 40px;
 
     .h5 {
-      color: #45505b;
       font-weight: 600;
     }
   }
