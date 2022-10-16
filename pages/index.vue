@@ -156,7 +156,9 @@
                   <b-list-group-item>Lambda</b-list-group-item>
                   <b-list-group-item>EventBridge</b-list-group-item>
                   <b-list-group-item>Simple Email Service</b-list-group-item>
-                  <b-list-group-item>Simple Notification Service</b-list-group-item>
+                  <b-list-group-item
+                    >Simple Notification Service</b-list-group-item
+                  >
                   <b-list-group-item>API Gateway</b-list-group-item>
                   <b-list-group-item>API AppSync</b-list-group-item>
                   <b-list-group-item>Certificate Manager</b-list-group-item>
@@ -226,6 +228,28 @@
     </MainSection>
     <MainSection id="certification">
       <template #header-text>Certification</template>
+      <b-card-group columns>
+        <b-card
+          :img-src="
+            require('@/assets/img/aws-certified-cloud-practitioner.png')
+          "
+        >
+          <b-card-body>
+            <b-card-title>AWS Certified Cloud Practitioner</b-card-title>
+            <b-card-sub-title class="mb-2">Amazon Web Service (AWS)</b-card-sub-title>
+            <b-card-text>
+              Issued on July 14, 2022
+              <br/>
+              Expires on July 14, 2025
+              <br>
+              <a href="https://www.credly.com/badges/7371b23d-1d98-4f00-a38d-2c86f5c3f701/public_url" target="_blank">Show Credly</a>
+            </b-card-text>
+            <b-card-text>
+              Issued by <a href="https://www.credly.com/org/amazon-web-services" target="_blank">Amazon Web Services Training and Certification</a>
+            </b-card-text>
+          </b-card-body>
+        </b-card>
+      </b-card-group>
     </MainSection>
     <MainSection id="article">
       <template #header-text>Article</template>
@@ -348,10 +372,10 @@ import Vue from 'vue'
 import dayjs from 'dayjs'
 import Typed from '~/components/Typed.vue'
 import MainSection from '~/components/main/MainSection.vue'
-import {Post, PostsResponse} from "~/types/Blogger";
+import { Post, PostsResponse } from '~/types/Blogger'
 
-const myBirthday = dayjs('19900726', 'YYYYMMDD');
-const myBirthdayFirstDate = dayjs('19900101', 'YYYYMMDD');
+const myBirthday = dayjs('19900726', 'YYYYMMDD')
+const myBirthdayFirstDate = dayjs('19900101', 'YYYYMMDD')
 
 export default Vue.extend({
   name: 'IndexPage',
@@ -383,7 +407,7 @@ export default Vue.extend({
       return `${process.env.cdn}/images/inner_room_00.jpg`
     },
     birthday() {
-      return myBirthday.format("YYYY. MM. DD.")
+      return myBirthday.format('YYYY. MM. DD.')
     },
     age() {
       return dayjs().diff(myBirthdayFirstDate, 'years') + 1
