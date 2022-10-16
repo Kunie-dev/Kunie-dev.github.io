@@ -89,8 +89,8 @@
     <MainSection id="skills">
       <template #header-text>Skills</template>
       <b-row tag="article">
-        <b-col sm="12" md lg xl>
-          <h3 class="text-center">Language</h3>
+        <b-col sm="12" md="4" lg="4" xl="4">
+          <h3>Language</h3>
         </b-col>
         <b-col>
           <b-list-group>
@@ -102,8 +102,8 @@
         </b-col>
       </b-row>
       <b-row tag="article">
-        <b-col sm="12" md lg xl>
-          <h3 class="text-center">Back-end</h3>
+        <b-col sm="12" md="4" lg="4" xl="4">
+          <h3>Back-end</h3>
         </b-col>
         <b-col>
           <b-list-group>
@@ -123,8 +123,8 @@
         </b-col>
       </b-row>
       <b-row tag="article">
-        <b-col sm="12" md lg xl>
-          <h3 class="text-center">Front-end</h3>
+        <b-col sm="12" md="4" lg="4" xl="4">
+          <h3>Front-end</h3>
         </b-col>
         <b-col>
           <b-list-group>
@@ -135,8 +135,8 @@
         </b-col>
       </b-row>
       <b-row tag="article">
-        <b-col sm="12" md lg xl>
-          <h3 class="text-center">DevOps</h3>
+        <b-col sm="12" md="4" lg="4" xl="4">
+          <h3>DevOps</h3>
         </b-col>
         <b-col>
           <b-list-group>
@@ -188,8 +188,8 @@
         </b-col>
       </b-row>
       <b-row tag="article">
-        <b-col sm="12" md lg xl>
-          <h3 class="text-center">Tools</h3>
+        <b-col sm="12" md="4" lg="4" xl="4">
+          <h3>Tools</h3>
         </b-col>
         <b-col>
           <b-list-group>
