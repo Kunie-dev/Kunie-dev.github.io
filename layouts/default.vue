@@ -12,8 +12,8 @@
         <b-nav-item href="#skills"
         ><b-icon icon="list-check" /><span>Skills</span></b-nav-item
         >
-        <b-nav-item href="#resume"
-        ><b-icon icon="file-earmark" /><span>Resume</span></b-nav-item
+        <b-nav-item href="#experience"
+        ><b-icon icon="view-list" /><span>Experience</span></b-nav-item
         >
         <b-nav-item href="#article"
         ><b-icon icon="newspaper" /><span>Article</span></b-nav-item

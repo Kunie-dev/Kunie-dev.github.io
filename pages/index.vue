@@ -221,8 +221,8 @@
         </b-col>
       </b-row>
     </MainSection>
-    <MainSection id="resume">
-      <template #header-text>Resume</template>
+    <MainSection id="experience">
+      <template #header-text>Experience</template>
     </MainSection>
     <MainSection id="article">
       <template #header-text>Article</template>
