@@ -15,6 +15,9 @@
         <b-nav-item href="#experience"
         ><b-icon icon="view-list" /><span>Experience</span></b-nav-item
         >
+        <b-nav-item href="#certification"
+        ><b-icon icon="award" /><span>Certification</span></b-nav-item
+        >
         <b-nav-item href="#article"
         ><b-icon icon="newspaper" /><span>Article</span></b-nav-item
         >

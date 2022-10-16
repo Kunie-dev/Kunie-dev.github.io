@@ -224,6 +224,9 @@
     <MainSection id="experience">
       <template #header-text>Experience</template>
     </MainSection>
+    <MainSection id="certification">
+      <template #header-text>Certification</template>
+    </MainSection>
     <MainSection id="article">
       <template #header-text>Article</template>
       <b-card-group columns>
