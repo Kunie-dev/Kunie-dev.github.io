@@ -145,24 +145,51 @@
           </address>
         </b-col>
         <b-col lg="8">
-          <b-form @submit="onSubmit">
+          <b-form @submit="onSubmit" class="position-relative pb4">
             <b-form-group :label-sr-only="true">
-              <b-form-input type="name" v-model="name" placeholder="성함" size="lg" />
+              <b-form-input
+                type="text"
+                v-model="name"
+                placeholder="성함"
+                size="lg"
+              />
             </b-form-group>
             <b-form-group :label-sr-only="true">
-              <b-form-input type="email" v-model="email" placeholder="이메일" size="lg" />
+              <b-form-input
+                type="email"
+                v-model="email"
+                placeholder="이메일"
+                size="lg"
+              />
             </b-form-group>
-            <b-form-group :label-sr-only="true" :state="0 < title.trim().length">
-              <b-form-input type="text" v-model="title" placeholder="제목" size="lg" />
+            <b-form-group
+              :label-sr-only="true"
+              :state="0 < title.trim().length"
+            >
+              <b-form-input
+                type="text"
+                v-model="title"
+                placeholder="제목"
+                size="lg"
+              />
             </b-form-group>
             <b-form-group :label-sr-only="true">
-              <b-form-textarea v-model="content" placeholder="내용" rows="5" size="lg" />
+              <b-form-textarea
+                v-model="content"
+                placeholder="내용"
+                rows="5"
+                size="lg"
+              />
             </b-form-group>
-            <div class="text-center">
-              <b-button type="submit" pill size="lg" variant="info"
-                >발송</b-button
-              >
-            </div>
+            <b-button
+              type="submit"
+              pill
+              size="lg"
+              variant="info"
+              class="w-25 m-auto d-block"
+              >발송</b-button
+            >
+            <b-overlay :show="showContactOverlay" no-wrap rounded> </b-overlay>
           </b-form>
         </b-col>
       </b-row>
@@ -227,10 +254,11 @@ export default Vue.extend({
   data() {
     return {
       posts: [] as Post[],
-      name: "",
-      email: "",
-      title: "",
-      content: "",
+      showContactOverlay: false,
+      name: '',
+      email: '',
+      title: '',
+      content: '',
     }
   },
   computed: {
@@ -243,24 +271,28 @@ export default Vue.extend({
   },
   methods: {
     async onSubmit(event: SubmitEvent) {
-      event.preventDefault();
+      event.preventDefault()
+
+      this.showContactOverlay = true
 
       try {
         await this.$axios.post(`${process.env.apiBaseUrl}/contact`, {
           name: this.name,
           email: this.email,
           title: this.title,
-          content: this.content
-        });
+          content: this.content,
+        })
 
-        alert("발송되었습니다.");
-        this.name = "";
-        this.email = "";
-        this.title = "";
-        this.content = "";
+        alert('발송되었습니다.')
+        this.name = ''
+        this.email = ''
+        this.title = ''
+        this.content = ''
       } catch (e) {
-        console.error(e);
-        alert("Error");
+        console.error(e)
+        alert('Error')
+      } finally {
+        this.showContactOverlay = false
       }
     },
   },
