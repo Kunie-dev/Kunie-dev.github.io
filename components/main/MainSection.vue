@@ -40,7 +40,7 @@ section {
   }
 }
 
-section:nth-child(2n + 1) {
+.section:nth-child(2n + 1) {
   background-color: #f5f8fd;
 }
 </style>
