@@ -48,6 +48,9 @@ export default {
     '@nuxtjs/i18n',
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-5898089332009613'
+    }]
   ],
   i18n: {
     /* module options */
